@@ -162,6 +162,61 @@ html {
   display: none;
 }
 
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content img {
+  max-width: 100%;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.button:hover {
+  background: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -196,17 +251,45 @@ html {
 
   <div class="project-grid">
 
-    <div class="project" style="background-image: url('https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg');" data-aos="fade-up">
-      <h3>Football Player Performance Prediction</h3>
-      <p>Machine learning applied to FIFA data for predicting player performance.</p>
-      <p><a href="https://github.com/himanshurawat39/football-player-performance-prediction" target="_blank" style="color:#ffe;">View on GitHub</a></p>
-    </div>
+    <div class="project" onclick="openModal('modal1')" data-aos="fade-up">
+  <h3>Football Player Performance</h3>
+  <p>Predicting player performance using FIFA data</p>
+</div>
 
-    <div class="project" style="background-image: url('https://images.pexels.com/photos/2047899/pexels-photo-2047899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');" data-aos="fade-up" data-aos-delay="100">
-      <h3>Netflix Data Analysis</h3>
-      <p>Exploratory data analysis and trend visualization on Netflix content.</p>
-      <p><a href="https://github.com/himanshurawat39/Netflix-data-analysis" target="_blank" style="color:#ffe;">View on GitHub</a></p>
-    </div>
+<!-- Modal for this project -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Football Player Performance Prediction</h2>
+    <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg" alt="Football Project" />
+    <p>This project uses machine learning to predict player ratings using FIFA 21 dataset.</p>
+    <p><strong>Tools:</strong> Python, Pandas, Scikit-learn</p>
+    <a href="https://github.com/himanshurawat39/football-player-performance-prediction" class="button">GitHub</a>
+  </div>
+</div>
+
+    <!-- Project Card -->
+<div class="project" onclick="openModal('modal-netflix')" data-aos="fade-up">
+  <h3>Netflix Data Analysis</h3>
+  <p>Analyzing content trends and insights from Netflix's dataset</p>
+</div>
+
+<!-- Modal -->
+<div id="modal-netflix" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-netflix')">&times;</span>
+    
+    <h2>Netflix Data Analysis</h2>
+    
+    <img src="https://images.pexels.com/photos/2047899/pexels-photo-2047899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Netflix Project Screenshot" />
+    
+    <p>This project explores the Netflix dataset to identify content trends, most frequent genres, movie durations, and release trends over time. Includes visual insights using Python libraries.</p>
+    
+    <p><strong>Tools Used:</strong> Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook</p>
+    
+    <a href="https://github.com/himanshurawat39/Netflix-data-analysis" target="_blank" class="button">GitHub</a>
+  </div>
+</div>
 
   </div>
 </section>
@@ -232,6 +315,26 @@ html {
     easing: 'ease-in-out',
     once: true,
   });
+</script>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Optional: Close when clicking outside
+  window.onclick = function (event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
 </script>
 
 </body>
