@@ -246,51 +246,35 @@ html {
     <p>Passionate about turning raw data into meaningful insights. Skilled in Python, Pandas, Scikit-learn, and visualization tools.</p>
   </section>
 
-  <section id="projects">
-  <h2>Projects</h2>
+  
+<section class="py-12 bg-gray-50" id="projects">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-8 text-center">My Data Science Projects</h2>
 
-  <div class="project-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+      <!-- Project 1 -->
+      <div class="rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
+        <img src="https://images.pexels.com/photos/2047899/pexels-photo-2047899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Netflix Dashboard" class="h-40 w-full object-cover rounded-t-2xl">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Netflix EDA Dashboard</h3>
+          <p class="text-sm text-gray-600 mt-2">Analyzed Netflix content trends, genre distribution, and release patterns using Python and Power BI.</p>
+          <a href="https://github.com/himanshurawat39/Netflix-data-analysis" class="text-blue-600 text-sm mt-3 inline-block">View on GitHub →</a>
+        </div>
+      </div>
 
-    <div class="project" onclick="openModal('modal1')" data-aos="fade-up">
-  <h3>Football Player Performance</h3>
-  <p>Predicting player performance using FIFA data</p>
-</div>
+      <!-- Project 2 -->
+      <div class="rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
+        <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg" alt="FIFA ML Project" class="h-40 w-full object-cover rounded-t-2xl">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">FIFA Player Prediction</h3>
+          <p class="text-sm text-gray-600 mt-2">Built ML models to predict player performance from FIFA 21 data using regression and feature engineering.</p>
+          <a href="https://github.com/himanshurawat39/football-player-performance-prediction" class="text-blue-600 text-sm mt-3 inline-block">View on GitHub →</a>
+        </div>
+      </div>
 
-<!-- Modal for this project -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <h2>Football Player Performance Prediction</h2>
-    <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg" alt="Football Project" />
-    <p>This project uses machine learning to predict player ratings using FIFA 21 dataset.</p>
-    <p><strong>Tools:</strong> Python, Pandas, Scikit-learn</p>
-    <a href="https://github.com/himanshurawat39/football-player-performance-prediction" class="button">GitHub</a>
-  </div>
-</div>
-
-    <!-- Project Card -->
-<div class="project" onclick="openModal('modal-netflix')" data-aos="fade-up">
-  <h3>Netflix Data Analysis</h3>
-  <p>Analyzing content trends and insights from Netflix's dataset</p>
-</div>
-
-<!-- Modal -->
-<div id="modal-netflix" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal-netflix')">&times;</span>
-    
-    <h2>Netflix Data Analysis</h2>
-    
-    <img src="https://images.pexels.com/photos/2047899/pexels-photo-2047899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Netflix Project Screenshot" />
-    
-    <p>This project explores the Netflix dataset to identify content trends, most frequent genres, movie durations, and release trends over time. Includes visual insights using Python libraries.</p>
-    
-    <p><strong>Tools Used:</strong> Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook</p>
-    
-    <a href="https://github.com/himanshurawat39/Netflix-data-analysis" target="_blank" class="button">GitHub</a>
-  </div>
-</div>
-
+      <!-- Add more projects below following the same structure -->
+    </div>
   </div>
 </section>
 
