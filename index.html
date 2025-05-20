@@ -2,324 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Himanshu Rawat - Data Science Portfolio</title>
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f7f8;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    max-width: 960px;
-    margin: auto;
-  }
-
-  h1, h2 {
-    color: #2c3e50;
-  }
-
-  a {
-    color: #1a73e8;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .project-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  .project {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: white;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .project::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-    z-index: 1;
-  }
-
-  .project * {
-    z-index: 2;
-    position: relative;
-  }
-
-  .project:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  }
-
-  .project h3 {
-    margin: 0 0 5px;
-    font-size: 20px;
-  }
-
-  .project p {
-    margin: 5px 0;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #777;
-  }
-
-    /* Sticky Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: white;
-  padding: 15px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.nav-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #007bff;
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Mobile Responsive */
-@media screen and (max-width: 600px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    display: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-}
-
-.menu-toggle {
-  display: none;
-}
-
-    .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow: auto;
-}
-
-.modal-content {
-  background: white;
-  margin: 10% auto;
-  padding: 30px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-content img {
-  max-width: 100%;
-  margin: 10px 0;
-  border-radius: 8px;
-}
-
-.close {
-  position: absolute;
-  top: 15px; right: 20px;
-  font-size: 28px;
-  cursor: pointer;
-  color: #333;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-.button:hover {
-  background: #0056b3;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-</style>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  <title>My Data Science Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-  <nav class="navbar">
-  <div class="nav-content">
-    <h2 class="logo">Himanshu Rawat</h2>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-  
-  <h1>Himanshu Rawat</h1>
-  <p><em>Data Scientist | Python & Machine Learning Enthusiast</em></p>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Passionate about turning raw data into meaningful insights. Skilled in Python, Pandas, Scikit-learn, and visualization tools.</p>
-  </section>
-
-  
-<section class="py-12 bg-gray-50" id="projects">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold mb-8 text-center">My Data Science Projects</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      
-      <!-- Project 1 -->
-      <div class="rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
-        <img src="https://images.pexels.com/photos/2047899/pexels-photo-2047899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Netflix Dashboard" class="h-40 w-full object-cover rounded-t-2xl">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Netflix EDA Dashboard</h3>
-          <p class="text-sm text-gray-600 mt-2">Analyzed Netflix content trends, genre distribution, and release patterns using Python and Power BI.</p>
-          <a href="https://github.com/himanshurawat39/Netflix-data-analysis" class="text-blue-600 text-sm mt-3 inline-block">View on GitHub →</a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition duration-300">
-        <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg" alt="FIFA ML Project" class="h-40 w-full object-cover rounded-t-2xl">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">FIFA Player Prediction</h3>
-          <p class="text-sm text-gray-600 mt-2">Built ML models to predict player performance from FIFA 21 data using regression and feature engineering.</p>
-          <a href="https://github.com/himanshurawat39/football-player-performance-prediction" class="text-blue-600 text-sm mt-3 inline-block">View on GitHub →</a>
-        </div>
-      </div>
-
-      <!-- Add more projects below following the same structure -->
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Himanshu Rawat</h1>
+      <ul class="flex space-x-6 text-sm font-semibold">
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </nav>
 
+  <!-- Hero Section -->
+  <header class="text-center py-16 bg-gradient-to-br from-blue-100 to-blue-300">
+    <h2 class="text-4xl font-bold mb-4">Hi, I'm Himanshu 👋</h2>
+    <p class="text-lg max-w-2xl mx-auto">A passionate data analyst and aspiring data scientist. I love turning raw data into impactful insights and actionable visuals.</p>
+  </header>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: himanshurawat4139@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/himanshurawat39" target="_blank">himanshurawat39</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/himanshu-rawat-ds39" target="_blank">himanshu-rawat-ds39</a></p>
+  <!-- Project Section -->
+  <section id="projects" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8 text-center">My Data Science Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Project Card -->
+        <div class="card">
+          <img src="assets/projects/netflix_dashboard.png" alt="Netflix Dashboard">
+          <div class="card-body">
+            <h3>Netflix EDA Dashboard</h3>
+            <p>Analyzed content trends, genres, and release patterns using Python & Power BI.</p>
+            <a href="https://github.com/yourusername/netflix-project" target="_blank">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/projects/fifa_model.png" alt="FIFA Player Model">
+          <div class="card-body">
+            <h3>FIFA Player Performance ML</h3>
+            <p>Predicted player performance using regression models on FIFA 21 dataset.</p>
+            <a href="https://github.com/yourusername/fifa-project" target="_blank">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/projects/data_cleaning.png" alt="Data Cleaning">
+          <div class="card-body">
+            <h3>Data Cleaning Project</h3>
+            <p>Performed preprocessing, imputation, outlier removal and EDA on messy datasets.</p>
+            <a href="https://github.com/yourusername/data-cleaning-project" target="_blank">View on GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Himanshu Rawat. All rights reserved.</p>
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p>I am a self-taught data enthusiast with a strong background in Python, data cleaning, visualization, and basic machine learning. I love solving real-world problems through data-driven approaches and constantly seek to improve my skills through hands-on projects.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-gray-100">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+      <p>You can find me on:</p>
+      <div class="mt-4 flex justify-center space-x-6">
+        <a href="https://github.com/himanshurawat39" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+        <a href="https://www.linkedin.com/in/himanshu-rawat-ds39" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
+        <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 text-sm text-gray-500">
+    © 2025 Himanshu Rawat. All rights reserved.
   </footer>
 
-  <!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    offset: 100,
-    easing: 'ease-in-out',
-    once: true,
-  });
-</script>
-
-  <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'block';
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-
-  // Optional: Close when clicking outside
-  window.onclick = function (event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if (event.target == modal) {
-        modal.style.display = 'none';
-      }
-    });
-  }
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
