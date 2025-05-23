@@ -92,30 +92,14 @@
       <button onclick="toggleForm()" class="contact-link">📧 Contact</button>
     </div>
 
-    <!-- Hidden contact form -->
-    <div id="contact-form" style="display: none;" class="mt-6 max-w-md mx-auto">
-      <form action="https://formspree.io/f/myzwabvq" method="POST">
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          class="w-full mb-3 px-4 py-2 border border-gray-300 rounded-md"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          required
-          class="w-full mb-3 px-4 py-2 border border-gray-300 rounded-md"
-        ></textarea>
-        <button
-          type="submit"
-          class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
+    <!-- Smooth Expanding Contact Form -->
+<div id="contact-form-wrapper" class="form-wrapper">
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="email" name="email" placeholder="Your Email" required class="form-input" />
+    <textarea name="message" rows="4" placeholder="Your Message" required class="form-input"></textarea>
+    <button type="submit" class="submit-button">Send Message</button>
+  </form>
+</div>
   </div>
 </section>
 
