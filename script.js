@@ -1,1 +1,6 @@
-// Currently empty — ready for future interactivity like filtering, animations, etc.
+function scrollToTop(e) {
+  e.preventDefault();
+  document.getElementById("home").scrollIntoView({
+    behavior: "smooth"
+  });
+}
