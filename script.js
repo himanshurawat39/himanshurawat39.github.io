@@ -6,11 +6,11 @@ function scrollToTop(e) {
 }
 
 function toggleForm() {
-  const wrapper = document.getElementById("contact-form-wrapper");
-  wrapper.classList.toggle("show");
-
-  if (wrapper.classList.contains("show")) {
-    wrapper.scrollIntoView({ behavior: "smooth", block: "center" });
+  const form = document.getElementById("contact-form");
+  if (form.style.display === "none") {
+    form.style.display = "block";
+    form.scrollIntoView({ behavior: "smooth" });
+  } else {
+    form.style.display = "none";
   }
 }
-
